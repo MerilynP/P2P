@@ -18,15 +18,10 @@ int main(){
 
   if(size != 2) MPI_Abort(MPI_COMM_WORLD, 1);
 
-  if(rank == 0){
-    MPI_Send(&sendbuff, 1, MPI_INT, 1, tag, MPI_COMM_WORLD);
-    MPI_Recv(&recvbuff, 1, MPI_INT, 1, tag, MPI_COMM_WORLD, &stat);
-  }
-  else if(rank == 1){
-    // Este es el orden correcto
-    MPI_Recv(&recvbuff, 1, MPI_INT, 0, tag, MPI_COMM_WORLD, &stat);
-    MPI_Send(&sendbuff, 1, MPI_INT, 0, tag, MPI_COMM_WORLD);
-  }
+  int peer = (rank == 0) ? 1 : 0;
+
+  MPI_Sendrecv(&sendbuff, 1, MPI_INT, peer, tag,
+               &recvbuff, 1, MPI_INT, peer, tag, MPI_COMM_WORLD, &stat);
 
   std::cout << "I'm: " << rank << " and my recv is: " << recvbuff << std::endl;
 
