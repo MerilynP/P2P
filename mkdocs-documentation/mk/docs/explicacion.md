@@ -43,7 +43,7 @@ De esta forma, se alcanza una mejor aproximación para el mismo valor de $h$.
 
 El método se deriva aplicando la serie de Taylor alrededor del punto medio $t + h/2$ para obtener el valor de la función en el punto $x(t + h)$. Tenemos
 $
-x(t + h) = x\left(t + \frac{h}{2}\right) + \frac{h}{2}\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t+h/2} + \frac{h^2}{8}\left(\frac{{\rm d}^2x}{{\rm d}t^2}\right)_{t+h/2} + O(h^3).
+x(t + h) = x(t + \frac{h}{2}) + \frac{h}{2}(\frac{{\rm d}x}{{\rm d}t})_{t+h/2} + \frac{h^2}{8}(\frac{{\rm d}^2x}{{\rm d}t^2})_{t+h/2} + O(h^3).
 $
 Similarmente, podemos hacer lo mismo para $x(t)$, tal que
 $
