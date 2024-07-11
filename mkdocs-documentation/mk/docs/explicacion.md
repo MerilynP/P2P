@@ -15,9 +15,7 @@ $\frac{\text d x}{\text d t} = f(x, t) \quad \text{con} \quad x(t=0)=x_0.$
 Algunos de los métodos que veremos son aplicables a otras clases de problemas, por ejemplo
 * $n$D: $\quad\displaystyle \frac{\text d x_i}{\text d t} = f_i(x_1,\dots{},x_n, t)\quad \text{con}\quad x_i(t=0)=x_{i0}.$
 * Ordenes mayores, e.g.:
-$$
-\frac{\text d^3 x}{\text d t^3} =f(x, t)\quad \Leftrightarrow \quad \frac{\text d x}{\text d t} = v,\ \frac{\text d v}{\text d t} = a,\ \frac{\text d a}{\text d t}=f.
-$$
+ $\frac{\text d^3 x}{\text d t^3} =f(x, t)\quad \Leftrightarrow \quad \frac{\text d x}{\text d t} = v,\ \frac{\text d v}{\text d t} = a,\ \frac{\text d a}{\text d t}=f.$
 * Conjuntos acoplados de ecuaciones diferenciales
 
 ## Bibliotecas
