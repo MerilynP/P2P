@@ -35,7 +35,7 @@ El método de Euler puede darnos una buena aproximación dependiendo del problem
 
 El método de Runge-Kutta es en realidad una familia de métodos de distinto orden que proveen una mejor aproximación sin la necesidad de considerar ordenes más altos en la expansión de Taylor del método de Euler. Este último punto se quiere evitar, dado que es complicado conocer la derivada de la función que estamos evaluando en el lado derecho de la ODE.
 
-### Método de Runge-Kutta 2$^{\rm do}.$ Orden (RK2)
+### Método de Runge-Kutta $2^{\rm do}.$ Orden (RK2)
 
 La idea del método RK2 es utilizar el punto medio para evaluar el método de Euler, como se indica en la figura. Mientras que el método de Euler se aplica en el punto $t$ para evaluar la derivada para aproximar la función en el punto $x = t + h$, el método RK2 utiliza el punto medio $t + h/2$. 
 
