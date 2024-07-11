@@ -4,18 +4,13 @@ Función para la evolución temporal según la ecuación de Schrödinger con par
 Consideremos el problema:   $\frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t}.$
 Esta ecuación puede ser integrada directamente separando variables de forma análitica.
 
-Por otro lado, el siguiente problema
-\begin{align}
-\frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t} + \frac{3x^2}{t^3},
-\end{align}
+Por otro lado, el siguiente problema: $\frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t} + \frac{3x^2}{t^3}.$
 ya no es separable y además de eso, es un problema no lineal (en el sentido de que aparecen potencias no lineales de la variable dependiente). 
 
 **Las ecuaciones diferenciales no lineales rara vez se pueden resolver de forma analítica**. Dado que dichas ecuaciones diferenciales aparecen en distintos campos en la ciencia, debemos atacar el problema de forma numérica.
 
-El problema general que consideraremos es una ecuación diferencial ordinaria sujeta a alguna condición inicial. La forma general está dada por 
-$$
-\frac{\text d x}{\text d t} = f(x, t) \quad \text{con} \quad x(t=0)=x_0.
-$$
+El problema general que consideraremos es una ecuación diferencial ordinaria sujeta a alguna condición inicial. La forma general está dada por:
+$\frac{\text d x}{\text d t} = f(x, t) \quad \text{con} \quad x(t=0)=x_0.$
 
 Algunos de los métodos que veremos son aplicables a otras clases de problemas, por ejemplo
 * $n$D: $\quad\displaystyle \frac{\text d x_i}{\text d t} = f_i(x_1,\dots{},x_n, t)\quad \text{con}\quad x_i(t=0)=x_{i0}.$
