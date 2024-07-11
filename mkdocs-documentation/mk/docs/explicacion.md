@@ -42,7 +42,7 @@ La idea del método RK2 es utilizar el punto medio para evaluar el método de Eu
 De esta forma, se alcanza una mejor aproximación para el mismo valor de $h$.
 
 El método se deriva aplicando la serie de Taylor alrededor del punto medio $t + h/2$ para obtener el valor de la función en el punto $x(t + h)$. Tenemos
-$x(t + h)$ = $x(t + \frac{h}{2})$ + $\frac{h}{2}$ $(\frac{dx}{dt})$  $\frac{h^2}{8}(\frac{{d}^2x}{{d}t^2})_{t+h/2} + O(h^3).$
+$x(t + h)$ = $x(t + \frac{h}{2})$ + $\frac{h}{2}$ $(\frac{dx}{dt})$ $_{(t+\frac{h}{2})}$ + $\frac{h^2}{8}$  (\frac{{d}^2x}{{d}t^2})_{t+h/2} + O(h^3).$
 Similarmente, podemos hacer lo mismo para $x(t)$, tal que
 $\x(t) = x\left(t + \frac{h}{2}\right) - \frac{h}{2}\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t+h/2} + \frac{h^2}{8}\left(\frac{{\rm d}^2x}{{\rm d}t^2}\right)_{t+h/2} + O(h^3).$
 Al sustraer ambas ecuaciones obtenemos
@@ -65,7 +65,7 @@ El error de aproximación de cada paso es de orden $O(h^3)$, mientras que el err
 
 Cabe recalcar que al utilizar el método de Euler para la primera parte de la aproximación, el error también es de $O(h^3)$ y por ende el error de aproximación se mantiene de $O(h^3)$.
 
-### Método de Runge-Kutta de 4$^{\rm to}$ Orden
+### Método de Runge-Kutta de $4^{\rm to}$ Orden
 
 La metodología anterior se puede aplicar aún a más puntos ubicados entre $x(t)$ y $x(t + h)$ realizando expansiones de Taylor. De esta forma se pueden agrupar términos de orden $h^3$, $h^4$, etc; para cancelar dichas expresiones. 
 
