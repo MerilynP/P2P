@@ -46,9 +46,7 @@ $
 x(t + h) = x(t + \frac{h}{2}) + \frac{h}{2}(\frac{{\rm d}x}{{\rm d}t})_{t+h/2} + \frac{h^2}{8}(\frac{{\rm d}^2x}{{\rm d}t^2})_{t+h/2} + O(h^3).
 $
 Similarmente, podemos hacer lo mismo para $x(t)$, tal que
-$
-x(t) = x\left(t + \frac{h}{2}\right) - \frac{h}{2}\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t+h/2} + \frac{h^2}{8}\left(\frac{{\rm d}^2x}{{\rm d}t^2}\right)_{t+h/2} + O(h^3).
-$
+$\x(t) = x\left(t + \frac{h}{2}\right) - \frac{h}{2}\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t+h/2} + \frac{h^2}{8}\left(\frac{{\rm d}^2x}{{\rm d}t^2}\right)_{t+h/2} + O(h^3).$
 Al sustraer ambas ecuaciones obtenemos
 $
 x(t + h) = x(t) + h\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t+h/2} + O(h^3)
