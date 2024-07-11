@@ -1,10 +1,10 @@
 Función para la evolución temporal según la ecuación de Schrödinger con paralelización
 ## Introducción
 
-Consideremos el problema:   $\frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t}.$
+Consideremos el problema:   $$\frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t}.$$
 Esta ecuación puede ser integrada directamente separando variables de forma análitica.
 
-Por otro lado, el siguiente problema: $\frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t} + \frac{3x^2}{t^3}.$
+Por otro lado, el siguiente problema: $$\frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t} + \frac{3x^2}{t^3}.$$
 ya no es separable y además de eso, es un problema no lineal (en el sentido de que aparecen potencias no lineales de la variable dependiente). 
 
 **Las ecuaciones diferenciales no lineales rara vez se pueden resolver de forma analítica**. Dado que dichas ecuaciones diferenciales aparecen en distintos campos en la ciencia, debemos atacar el problema de forma numérica.
@@ -41,23 +41,20 @@ La idea del método RK2 es utilizar el punto medio para evaluar el método de Eu
 
 De esta forma, se alcanza una mejor aproximación para el mismo valor de $h$.
 
-El método se deriva aplicando la serie de Taylor alrededor del punto medio $t + h/2$ para obtener el valor de la función en el punto $x(t + h)$. Tenemos
-$x(t + h)$ = $x(t + \frac{h}{2})$ + $\frac{h}{2}$ $(\frac{dx}{dt})$ $_{(t+\frac{h}{2})}$ + $\frac{h^2}{8}$  (\frac{{d}^2x}{{d}t^2})_{t+h/2} + O(h^3).$
+El método se deriva aplicando la serie de Taylor alrededor del punto medio $t + h/2$ para obtener el valor de la función en el punto $x(t + h)$. Tenemos:
+
+$$x(t + h) = x(t + \frac{h}{2}) + \frac{h}{2} (\frac{dx}{dt})+ \frac{h^2}{8}(\frac{{\rm d}^2x}{{\rm d}t^2}) + O(h^3).$$
 Similarmente, podemos hacer lo mismo para $x(t)$, tal que
-$\x(t) = x\left(t + \frac{h}{2}\right) - \frac{h}{2}\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t+h/2} + \frac{h^2}{8}\left(\frac{{\rm d}^2x}{{\rm d}t^2}\right)_{t+h/2} + O(h^3).$
-Al sustraer ambas ecuaciones obtenemos
-$
-x(t + h) = x(t) + h\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t+h/2} + O(h^3)
-$
+$$x(t) = x(t + \frac{h}{2}) - \frac{h}{2}(\frac{dx}{dt}) + \frac{h^2}{8}(\frac{d^2x}{dt^2}) + O(h^3).$$
+Al sustraer ambas ecuaciones obtenemos:
+$$x(t + h) = x(t) + h\frac{dx}{dt} + O(h^3).$$
 Finalmente,
-$
-\boxed{x(t + h) = x(t) + hf[x(t + h/2), t + h/2] + O(h^3)}.
-$
+$$x(t + h) = x(t) + hf[x(t + \frac{h}{2}, t + \frac{h}{2}] + O(h^3).$$
 El término de orden $h^2$ desaparece y nuestra aproximación tiene un error de orden $h^3$. Recordemos que incrementar el orden del error por un orden de magnitud es muy beneficioso a nivel computacional. 
 
-El único problema es que requerimos conocer el valor de la función en el punto medio $x(t + h/2)$, el cual desconocemos.
+El único problema es que requerimos conocer el valor de la función en el punto medio $x(t + \frac{h}{2})$, el cual desconocemos.
 
-Para aproximar este valor utilizamos el método de Euler con un paso $h/2$, $(x + h/2) = x(t) + \frac{h}{2}f(x,t)$. De esta manera, obtenemos las ecuaciones del método RK2:
+Para aproximar este valor utilizamos el método de Euler con un paso $\frac{h}{2}$, $(x + \frac{h}{2}) = x(t) + \frac{h}{2}f(x,t)$. De esta manera, obtenemos las ecuaciones del método RK2:
 * $k_1 = hf(x,t),$
 * $k_2 = hf\left(x + \frac{k_1}{2},t + \frac{h}{2}\right)$
 * $x(t + h) = x(t) + k_2$
