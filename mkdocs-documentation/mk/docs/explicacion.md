@@ -2,17 +2,8 @@ Función para la evolución temporal según la ecuación de Schrödinger con par
 ## Introducción
 
 Consideremos el problema
-\begin{center}
-$
-    \frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t}
-$
-\end{center}
 
-\begin{center}
-$
-    \frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t}
-$
-\end{center}
+$\frac{{\rm d}x}{{\rm d}t} = \frac{2x}{t}.$
 Esta ecuación puede ser integrada directamente separando variables de forma análitica.
 
 Por otro lado, el siguiente problema
