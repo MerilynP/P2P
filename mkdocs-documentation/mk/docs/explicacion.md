@@ -37,11 +37,11 @@ El método de Runge-Kutta es en realidad una familia de métodos de distinto ord
 
 ### Método de Runge-Kutta $2^{\rm do}.$ Orden (RK2)
 
-La idea del método RK2 es utilizar el punto medio para evaluar el método de Euler, como se indica en la figura. Mientras que el método de Euler se aplica en el punto $t$ para evaluar la derivada para aproximar la función en el punto $x = t + h$, el método RK2 utiliza el punto medio $t + h/2$. 
+La idea del método RK2 es utilizar el punto medio para evaluar el método de Euler, como se indica en la figura. Mientras que el método de Euler se aplica en el punto $t$ para evaluar la derivada para aproximar la función en el punto $x = t + h$, el método RK2 utiliza el punto medio $t + \frac{h}{2}$. 
 
 De esta forma, se alcanza una mejor aproximación para el mismo valor de $h$.
 
-El método se deriva aplicando la serie de Taylor alrededor del punto medio $t + h/2$ para obtener el valor de la función en el punto $x(t + h)$. Tenemos:
+El método se deriva aplicando la serie de Taylor alrededor del punto medio $t + \frac{h}{2}$ para obtener el valor de la función en el punto $x(t + h)$. Tenemos:
 
 $$x(t + h) = x(t + \frac{h}{2}) + \frac{h}{2} (\frac{dx}{dt})+ \frac{h^2}{8}(\frac{{\rm d}^2x}{{\rm d}t^2}) + O(h^3).$$
 Similarmente, podemos hacer lo mismo para $x(t)$, tal que
